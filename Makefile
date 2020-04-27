@@ -64,9 +64,9 @@ INCLUDES	:=  src
 # options for code generation
 #---------------------------------------------------------------------------------
 CFLAGS	:=  -std=gnu11 -mrvl -mcpu=750 -meabi -mhard-float -ffast-math \
-		    -O3 -Wall -Wextra -Wno-unused-parameter -Wno-strict-aliasing $(INCLUDE)
+		    -O3 -Wall -Wextra -Wno-unused-parameter -Wno-strict-aliasing -D_GNU_SOURCE $(INCLUDE)
 CXXFLAGS := -std=gnu++11 -mrvl -mcpu=750 -meabi -mhard-float -ffast-math \
-		    -O3 -Wall -Wextra -Wno-unused-parameter -Wno-strict-aliasing $(INCLUDE)
+		    -O3 -Wall -Wextra -Wno-unused-parameter -Wno-strict-aliasing -D_GNU_SOURCE $(INCLUDE)
 ASFLAGS	:= -mregnames
 LDFLAGS	:= -nostartfiles -T $(WUT_ROOT)/rules/rpl.ld -pie -fPIE -z common-page-size=64 -z max-page-size=64 -lcrt \
 			-Wl,-wrap,malloc,-wrap,free,-wrap,memalign,-wrap,calloc,-wrap,realloc,-wrap,malloc_usable_size \
@@ -79,7 +79,7 @@ MAKEFLAGS += --no-print-directory
 #---------------------------------------------------------------------------------
 # any extra libraries we wish to link with the project
 #---------------------------------------------------------------------------------
-LIBS	:= -lcrt -lcoreinit -lproc_ui -lnsysnet -lsndcore2 -lvpad -lgx2 -lsysapp -lgd -lpng -lz -lfreetype -lmad -lvorbisidec
+LIBS	:= -lcrt -lcoreinit -lproc_ui -lnsysnet -lsndcore2 -lvpad -lgx2 -lsysapp -lgd -lpng -lz -lfreetype -lvorbisidec -lbz2 -logg
 
 #---------------------------------------------------------------------------------
 # list of directories containing libraries, this must be the top level containing
