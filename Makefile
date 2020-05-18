@@ -79,7 +79,7 @@ MAKEFLAGS += --no-print-directory
 #---------------------------------------------------------------------------------
 # any extra libraries we wish to link with the project
 #---------------------------------------------------------------------------------
-LIBS	:= -lcrt -lcoreinit -lproc_ui -lnsysnet -lsndcore2 -lvpad -lgx2 -lsysapp -lgd -lpng -lz -lfreetype -lvorbisidec -lbz2 -logg
+LIBS	:= -lcrt -lcoreinit -lproc_ui -lnsysnet -lsndcore2 -lvpad -lgx2 -lsysapp -lgd -lpng -lz -lfreetype -lvorbisidec -lbz2 -logg -lmad
 
 #---------------------------------------------------------------------------------
 # list of directories containing libraries, this must be the top level containing
